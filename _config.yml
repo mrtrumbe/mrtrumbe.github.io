@@ -1,0 +1,4 @@
+name: Two Hand News
+markdown: redcarpet
+pygments: true
+exclude: ["vendor"]
