@@ -9,12 +9,12 @@
         <meta name="author" content="" />
 
         <link href="/assets/bootstrap/v3.1.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/new_main.css" rel="stylesheet" />
         
-        <!-- syntax highlighting CSS -->
+        <!-- defaults
         <link rel="stylesheet" href="/css/syntax.css">
-
-        <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
+        -->
 
     </head>
     <body>
@@ -22,12 +22,14 @@
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
-              <a class="navbar-brand" href="#">{{ site.name }}</a>
+              <a class="navbar-brand" href="/">{{ site.name }}</a>
           </div>
         </div>
       </div>
 
+      <div class="container">
       {{ content }}
+      </div>
 
       <div class="footer">
         <div class="contact">
