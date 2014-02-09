@@ -7,7 +7,7 @@ body {
 #background-layer {
   z-index: -1;
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
