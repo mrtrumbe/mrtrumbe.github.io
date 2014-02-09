@@ -1,43 +1,105 @@
 ---
 layout: default
-title: Two Hand News
+title: Matthew Trumbell
+mainpage: true
 ---
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-1">
       &nbsp;
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-2">
-      &nbsp;
-  </div>
-  <div class="col-md-2">
-      <p>
-      The Michigan sports news project. Delivering the links you need to see today.
-      </p>
-      <p>
-      Tips? <a href="email:blah@blah.com">Email us!</a>
-      </p>
   </div>
   <div class="col-md-6">
-    {% for post in site.posts %}
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-heading"><h2><a href="{{ post.url }}">{{ post.title }}</a></h2></div>
-            <div class="panel-body">
-              <p class="meta">{{ post.date | date_to_string }}</p>
-              <div class="post">
-              {{ post.content }}
-              </div>
-            </div>
-          </div>
+    <div class="panel panel-default mrt-panel">
+      <div class="panel-body">
+        <div id="about" class="mrt-section" >
+          <img src="/img/matthew.png" title="Matthew Trumbell" />
+          <p>
+            Hi, my name is Matthew Trumbell. I live with my family 
+            in Chicago, IL, in the <a href="https://maps.google.com/maps?q=lakeview,+chicago,+il&hl=en&sll=41.833733,-87.731964&sspn=0.709082,1.447449&hnear=Lake+View,+Chicago,+Cook,+Illinois&t=m&z=14">Lakeview</a> neighborhood.
+          </p>
+          <p>
+            I like technology quite a lot and do quite a lot of 
+            coding / designing / hacking in my free time. That is
+            also how I make my living.
+          </p>
+          <p>
+            I can frequently be found working with food and picking 
+            my guitars. Or building container gardens. Or any number
+            of other frivolous but emmensely fulfilling hobbies, really.
+          </p>
+          <p>
+            I'm currently working on a system that attempts to 
+            squeeze a few more hours into my days. It isn't 
+            going well.
+          </p>
+        </div>
+        <div id="career" class="mrt-section" >
+          <h1>Career</h1>
+          <p>
+            I have over a decade of experience building complex
+            server side software with intuitive and easy to use
+            clients. I've worked with many different architecture 
+            styles and with many codebases, but I gravitate toward
+            lightweight, modular systems.
+          </p>
+          <p>
+            I've spent most of my career working in Python, C#, C 
+            and HTML/Javascript. I also have considerable experience
+            with Java, C++ and database technologies such as
+            PostgresQL and MongoDB. Django has been my web framework 
+            of choice for the last 5 years or so.
+          </p>
+          <p>
+            Most of my career has been spent creating risk management
+            systems and models for financial derivatives trading. This
+            is my specialty and it's an incredibly engaging problem set
+            to work on.
+          </p>
+          <p>
+            My resume is available online:
+            <ul>
+              <li><a href="">PDF Format</a></li>
+              <li><a href="">Word Format</a></li>
+            </ul>
+
+          </p>
+        </div>
+        <div id="connect" class="mrt-section" >
+          <h1>Connect</h1>
+          <p>
+            Get in touch with me on any of the following social media
+            sites:
+          </p>
+          <p>
+            <a class="twitter-timeline" href="https://twitter.com/MTrums" 
+              data-widget-id="432577147400511490">Tweets by @MTrums</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            
+            Blah blah blah blah
+          </p>
+          <p>
+            Send email to this address: matthew [ahhht] trumbell [dahhht] net
+          </p>
+          <p>
+            I also blog, <a href="/blog.html">on this site</a>, mostly 
+            about code and food. If you are interested in my incorrect 
+            political opinions, check out my 
+            <a href="https://twitter.com/mtrums">Twitter feed</a>.
+          </p>
+        </div>
+        <div class="mrt-section" >
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
         </div>
       </div>
-    {% endfor %}
+    </div>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-5">
       &nbsp;
   </div>
 </div>
