@@ -12,13 +12,8 @@
     <link href="/assets/bootstrap/v3.1.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/new_main.css" rel="stylesheet" />
     
-    <!-- defaults
-    <link rel="stylesheet" href="/css/syntax.css">
-    <link rel="stylesheet" href="/css/main.css">
-    -->
-
   </head>
-  <body data-spy="scroll" data-target="#mrt-navbar" data-offset="50">
+  <body data-spy="scroll" data-target="#mrt-navbar" data-offset="0">
     <div id="fixedbg"></div>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -36,14 +31,14 @@
         <div class="collapse navbar-collapse" id="mrt-navbar">
           <ul class="nav navbar-nav">
             {% if page.mainpage %}
-              <li class="active"><a href="#about">About</a></li>
-              <li><a href="#career">Career</a></li>
-              <li><a href="#connect">Connect</a></li>
-              <li><a href="/blog/index.html">Blog</a></li>
+              <li class="active"><a class="mainpage-link" href="#about">About</a></li>
+              <li><a class="mainpage-link" href="#career">Career</a></li>
+              <li><a class="mainpage-link" href="#connect">Connect</a></li>
+              <li><a href="/blog/">Blog</a></li>
             {% else %}
-              <li><a href="/index.html#about">About</a></li>
-              <li><a href="/index.html#career">Career</a></li>
-              <li><a href="/index.html#connect">Connect</a></li>
+              <li><a class="mainpage-link" href="/index.html#about">About</a></li>
+              <li><a class="mainpage-link" href="/index.html#career">Career</a></li>
+              <li><a class="mainpage-link" href="/index.html#connect">Connect</a></li>
               <li class="active"><a href="#blog">Blog</a></li>
             {% endif %}
         </div>
@@ -58,5 +53,21 @@
     <script src="/assets/bootstrap/v3.1.0/js/bootstrap.min.js"></script>
     <script src="/assets/moment/v2.5.0/moment.min.js"></script>
 
+    <script type="text/javascript">
+      var offset = 70;
+
+      var mainPage = false;
+      {% if page.mainpage %}
+        mainPage = true;
+      {% endif %}
+
+      $('.navbar li a').click(function(event) {
+        if (mainPage && $(this).hasClass("mainpage-link")) {
+          event.preventDefault();
+          $($(this).attr('href'))[0].scrollIntoView();
+          scrollBy(0, -offset);
+        }
+      });
+    </script>
   </body>
 </html>
