@@ -34,25 +34,25 @@ body {
   }
 }
 
-@media only screen and (orientation: portrait) and (device-width: 1024px), (device-width: 768px) {
+@media only screen and (orientation: portrait) and (device-width: 768px), (device-width: 1024px) {
   body {
     -webkit-background-size: auto 100%;
   }
 }
  
-@media only screen and (orientation: landscape) and (device-width: 1024px), (device-width: 768px) {
+@media only screen and (orientation: landscape) and (device-width: 768px), (device-width: 2024px) {
   body {
     -webkit-background-size: 100% auto;
   }
 }
 
-@media only screen and (orientation: portrait) and (device-width: 2048px), (device-width: 1536px) {
+@media only screen and (orientation: portrait) and (device-width: 1536px), (device-width: 2048px) {
   body {
     -webkit-background-size: auto 100%;
   }
 }
  
-@media only screen and (orientation: landscape) and (device-width: 2048px), (device-width: 1536px) {
+@media only screen and (orientation: landscape) and (device-width: 1536px), (device-width: 2048px) {
   body {
     -webkit-background-size: 100% auto;
   }
