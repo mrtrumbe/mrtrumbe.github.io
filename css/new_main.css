@@ -1,6 +1,3 @@
-html {
-}
-
 body { 
   font-family: "Trebuchet MS", Arial, sans-serif;
 
@@ -37,6 +34,33 @@ body {
   }
 }
 
+@media only screen and (orientation: portrait) and (device-width: 1024px), (device-width: 768px) {
+  body {
+    -webkit-background-size: auto 100%;
+  }
+}
+ 
+@media only screen and (orientation: landscape) and (device-width: 1024px), (device-width: 768px) {
+  body {
+    -webkit-background-size: 100% auto;
+  }
+}
+
+@media only screen and (orientation: portrait) and (device-width: 2048px), (device-width: 1536px) {
+  body {
+    -webkit-background-size: auto 100%;
+  }
+}
+ 
+@media only screen and (orientation: landscape) and (device-width: 2048px), (device-width: 1536px) {
+  body {
+    -webkit-background-size: 100% auto;
+  }
+}
+
+
+
+
 .mrt-panel {
   background: rgba(255, 255, 255, 0);
   border: 0px;
@@ -50,18 +74,18 @@ body {
 
   /* mozilla - FF3.6+ */
   background-image: -moz-linear-gradient(
-    top center,
-    rgba(255, 255, 255, 1.0) 20%, rgba(255, 255, 255, 0) 95%
+    top left,
+    rgba(232, 218, 231, 0.5) 50%, rgba(232, 218, 231, 0.3) 30%
   );
 
   /* IE 5.5 - 7 */
   filter: progid:DXImageTransform.Microsoft.gradient(
-    gradientType=0, startColor=0, endColorStr=#FFFFFF
+    gradientType=0, startColor=0, endColorStr=#E8DAE7
   );
 
   /* IE8 uses -ms-filter for whatever reason... */
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(
-    gradientType=0, startColor=0, endColoStr=#FFFFFF
+    gradientType=0, startColor=0, endColoStr=#E8DAE7
   );
 }
 
