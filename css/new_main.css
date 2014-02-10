@@ -1,13 +1,20 @@
+html {
+    overflow-x:hidden;
+}
+
 body { 
   font-family: "Trebuchet MS", Arial, sans-serif;
 
-  background-image: url(/img/background.png);
   background-color: #87A8CB;
+  overflow-x:hidden;
+  /*
+  background-image: url(/img/background.png);
   background-position-x: 50%;
   background-position-y: 50%;
   background-position: top left;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  */
 
   background-size: cover;
   -moz-background-size: cover;
@@ -15,6 +22,17 @@ body {
 
   padding-top: 50px; 
 }
+
+#fixedbg {
+  background-image: url(/img/background.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  height:100%;
+  position:fixed;
+  width:100%;
+  z-index:-1;
+}
+
 /*
 @media only all and (max-width: 1440px) and (max-height: 1050px) {
   body {
