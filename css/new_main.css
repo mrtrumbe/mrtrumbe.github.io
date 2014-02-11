@@ -16,6 +16,7 @@ body {
   background-image: url(/img/background.jpg);
   background-repeat: no-repeat;
   background-position: top left;
+  background-size: cover;
   height:100%;
   position:fixed;
   width:100%;
