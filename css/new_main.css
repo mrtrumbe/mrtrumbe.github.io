@@ -109,11 +109,20 @@ body {
 .sidebar-nav a {
   color: rgba(235, 255, 255, 0.5);
   text-decoration: none;
-  padding: 0px !important;
+  padding: 7px 7px 0 0 !important;
+  margin: 0px;
 }
 
 .sidebar-nav a:visited {
   color: rgba(235, 255, 255, 0.5);
+}
+
+.sidebar-nav li a:hover {
+  background-color: rgba(50, 75, 75, 0.5) !important;
+}
+
+.sidebar-nav li a:focus {
+  background-color: rgba(50, 75, 75, 0.5) !important;
 }
 
 @media (max-width:767px) {
@@ -155,14 +164,6 @@ body {
   /*background: rgba(255, 255, 255, 0.0);*/
   color: rgba(235, 255, 255, 0.5);
 }
-
-
-.navbar-brand {
-  font-size: 24pt;
-  color: #000;
-  text-decoration: none;
-}
-
 
 .mrt-panel {
   background: rgba(235, 255, 255, 0);
