@@ -10,43 +10,51 @@
 
 
     <link href="/assets/bootstrap/v3.1.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/font-awesome/v4.0.3/css/font-awesome.min.css">
     <link href="/css/new_main.css" rel="stylesheet" />
     
   </head>
-  <body data-spy="scroll" data-target="#mrt-navbar" data-offset="0">
+  <body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="0">
     <div id="fixedbg"></div>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
 
-        <div class="navbar-header">
-          <a href="/" class="navbar-brand">Matthew Trumbell</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mrt-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+    <div id="wrapper">
 
-        <div class="collapse navbar-collapse" id="mrt-navbar">
-          <ul class="nav navbar-nav">
-            {% if page.mainpage %}
-              <li class="active"><a class="mainpage-link" href="#about">About</a></li>
-              <li><a class="mainpage-link" href="#career">Career</a></li>
-              <li><a class="mainpage-link" href="#connect">Connect</a></li>
-              <li><a href="/blog/">Blog</a></li>
-            {% else %}
-              <li><a class="mainpage-link" href="/index.html#about">About</a></li>
-              <li><a class="mainpage-link" href="/index.html#career">Career</a></li>
-              <li><a class="mainpage-link" href="/index.html#connect">Connect</a></li>
-              <li class="active"><a href="#blog">Blog</a></li>
-            {% endif %}
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav" role="navigation">
+        {% if page.mainpage %}
+          <li class="active"><a class="mainpage-link" href="#about">About</a></li>
+          <li><a class="mainpage-link" href="#career">Career</a></li>
+          <li><a class="mainpage-link" href="#connect">Connect</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        {% else %}
+          <li><a class="mainpage-link" href="/index.html#about">About</a></li>
+          <li><a class="mainpage-link" href="/index.html#career">Career</a></li>
+          <li><a class="mainpage-link" href="/index.html#connect">Connect</a></li>
+          <li class="active"><a href="#blog">Blog</a></li>
+        {% endif %}
+        </ul>
+      </div>
+
+      <div id="page-content-wrapper">
+        <div class="page-content">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="mrt-title">
+                  <div id="sidebar-toggle-wrapper">
+                    <a id="sidebar-toggle" href="#">
+                      <i class="fa fa-bars fa-2x pull-left fa-border"></i>
+                    </a>
+                  </div>
+                  <h1>
+                    {{ page.title }}
+                  </h1>
+                </div>
+                {{ content }}
+              </div>
+            </div>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-    {{ content }}
     </div>
 
     <script src="/assets/jquery/v1.10.2/jquery.min.js"></script>
@@ -61,13 +69,23 @@
         mainPage = true;
       {% endif %}
 
-      $('.navbar li a').click(function(event) {
+      $('.sidebar-nav li a').click(function(event) {
+        $("#wrapper").toggleClass("active");
+
+        /*
         if (mainPage && $(this).hasClass("mainpage-link")) {
           event.preventDefault();
           $($(this).attr('href'))[0].scrollIntoView();
           scrollBy(0, -offset);
         }
+        */
       });
+
+      $("#sidebar-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("active");
+      });
+      
     </script>
   </body>
 </html>

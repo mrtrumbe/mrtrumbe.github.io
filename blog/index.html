@@ -1,39 +1,26 @@
 ---
 layout: default
-title: Two Hand News
+title: The MRT Blog
 mainpage: false
 ---
 
-<div class="row">
-  <div class="col-md-1">
-      &nbsp;
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-default mrt-panel">
-      <div class="panel-body">
-        <div id="blog" class="mrt-section">
-          <h1>Blog</h1>
-        </div> 
-        {% for post in site.posts %}
-          <div class="mrt-section">
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p class="meta">{{ post.date | date_to_string }}</p>
-            <div class="post">
-            {{ post.content }}
-            </div>
-          </div>
-        {% endfor %}
-        <div id="blog" class="mrt-section">
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-        </div> 
+<div class="panel panel-default mrt-panel">
+  <div class="panel-body">
+    {% for post in site.posts %}
+      <div class="mrt-section">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p class="meta">{{ post.date | date_to_string }}</p>
+        <div class="post">
+        {{ post.content }}
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-md-5">
-      &nbsp;
+    {% endfor %}
+    <div id="blog" class="mrt-section">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div> 
   </div>
 </div>

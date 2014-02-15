@@ -1,19 +1,50 @@
+/*
+@font-face {
+  font-family: MrtCustomFont;
+  src: url("/fonts/zag.eot");
+}
+*/
+@font-face {
+  font-family: MrtCustomFont;
+  /*src: url("/fonts/junction/junction.ttf");*/
+  /*src: url("/fonts/bebas/bebas_neue_regular.ttf");
+  /*src: url("/fonts/zag/zag.otf");*/
+  src: url("/fonts/nexa/Nexa_Light.otf");
+  /*src: url("/fonts/track/Track.ttf");*/
+  /*src: url("/fonts/crimson/CrimsonText-Roman.ttf");*/
+  /*src: url("/fonts/museo_sans/MuseoSans-500.otf");*/
+}
+@font-face {
+  font-family: MrtCustomFont;
+  src: url("/fonts/bebas/bebas_neue_regular.ttf");
+  /*src: url("/fonts/zag/zag_bold.otf");*/
+  /*src: url("/fonts/nexa/Nexa_Bold.otf");*/
+  /*src: url("/fonts/track/Track.ttf");*/
+  /*src: url("/fonts/crimson/CrimsonText-Bold.ttf");*/
+  /*src: url("/fonts/museo_sans/MuseoSans-500.otf");*/
+  font-weight: bold;
+}
+
+
 html {
-    overflow-x:hidden;
+  overflow-x:hidden;
 }
 
 body { 
   /*font-family: "Trebuchet MS", Arial, sans-serif;*/
-  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  /* backups: Optima, Arial, */
+  font-family: MrtCustomFont, sans-serif;
+  color: #000;
 
   background-color: #87A8CB;
   overflow-x:hidden;
 
-  padding-top: 50px; 
+
+  /* padding-top: 50px; */
 }
 
 #fixedbg {
-  background-image: url(/img/background.jpg);
+  background-image: url(/img/background_1400x850.jpg);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: cover;
@@ -23,24 +54,129 @@ body {
   z-index:-1;
 }
 
-.navbar {
-  font-size: 18px;
+#wrapper {
+  padding-left: 150px;
+  transition: all 0.4s ease 0.1s;
+
+  margin: 0 30px 0 0;
 }
 
+#sidebar-wrapper {
+  margin-left: -150px;
+  left: 150px;
+  width: 150px;
+  background: rgba(255, 255, 255, 0);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0.1s;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  margin: 0 10px 0 10px;
+}
+
+#sidebar-toggle-wrapper {
+  display: none;
+  margin-top:10px
+}
+
+#sidebar-toggle i {
+  color: rgba(235, 255, 255, 0.5);
+  border-color: rgba(235, 255, 255, 0.5);
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 150px;
+  list-style: none;
+  margin: 0;
+  padding: 200px 10px 0 10px;
+
+  font-size: 28pt;
+  font-weight: bold;
+  text-align: right;
+
+}
+
+.sidebar-nav .active a {
+  text-decoration: underline !important;
+}
+
+.sidebar-nav a {
+  color: rgba(235, 255, 255, 0.5);
+  text-decoration: none;
+  padding: 0px !important;
+}
+
+.sidebar-nav a:visited {
+  color: rgba(235, 255, 255, 0.5);
+}
+
+@media (max-width:767px) {
+  #wrapper {
+    padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+    left: 0;
+  }
+
+  #wrapper.active {
+    position: relative;
+    left: 150px;
+  }
+
+  #wrapper.active #sidebar-wrapper {
+    left: 150px;
+    width: 150px;
+    transition: all 0.4s ease 0.1s;
+  }
+
+  #sidebar-toggle-wrapper {
+    display: block;
+  }
+}
+
+.mrt-title {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.mrt-title h1 {
+  padding: 50px 0 50px 0;
+  margin: 0;
+  font-size: 64pt;
+  font-weight: bold;
+  /*background: rgba(255, 255, 255, 0.0);*/
+  color: rgba(235, 255, 255, 0.5);
+}
+
+
 .navbar-brand {
-  font-size: 24px;
+  font-size: 24pt;
+  color: #000;
+  text-decoration: none;
 }
 
 
 .mrt-panel {
-  background: rgba(255, 255, 255, 0);
+  background: rgba(235, 255, 255, 0);
   border: 0px;
   border-radius: 0px;
 
   /* webkit */
   background-image: -webkit-gradient(
+    /*
     linear, left top, left bottom, from(rgba(232, 218, 231, 0.5)),
     to(rgba(232, 218, 231, 0.3))
+    */
+    linear, left top, left bottom, from(rgba(235, 255, 255, 0.5)),
+    to(rgba(235, 255, 255, 0.5))
   );
 
   /* mozilla - FF3.6+ */
@@ -72,7 +208,21 @@ body {
   margin-bottom: 10px;
 }
 
+.mrt-section h1 {
+  font-weight: bold;
+  font-size: 36pt;
+}
+
 .mrt-section p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
+}
+
+a {
+  color: #72715b;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #62614b;
 }
