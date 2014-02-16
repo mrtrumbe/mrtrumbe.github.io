@@ -125,40 +125,6 @@ body {
   background-color: rgba(50, 75, 75, 0.5) !important;
 }
 
-@media (max-width:767px) {
-  #fixedbg {
-    background-image: url(/img/background_790x680.jpg);
-  }
-
-  #wrapper {
-    padding-left: 0;
-    margin: 0 20px 0 0;
-  }
-
-  #sidebar-wrapper {
-    left: 0;
-  }
-
-  #wrapper.active {
-    position: relative;
-    left: 150px;
-  }
-
-  #wrapper.active #sidebar-wrapper {
-    left: 150px;
-    width: 150px;
-    transition: all 0.4s ease 0.1s;
-  }
-
-  #sidebar-toggle-wrapper {
-    display: block;
-    padding-bottom: 20px;
-  }
-
-  .sidebar-nav {
-    padding: 55px 10px 0 10px;
-  }
-}
 
 .mrt-title {
   text-align: left;
@@ -241,15 +207,56 @@ a:visited {
 
 .connect-link i {
   color: rgba(235, 255, 255, 0.5);
-  border-color: rgba(235, 255, 255, 0.5);
+  border-color: rgba(235, 255, 255, 0.8);
 }
 
 .connect-link a:hover i {
   color: rgba(235, 255, 255, 0.9);
-  border-color: rgba(235, 255, 255, 0.9);
+  border-color: rgba(235, 255, 255, 1);
 }
 
 .connect-link a:focus i {
   color: rgba(235, 255, 255, 0.9);
-  border-color: rgba(235, 255, 255, 0.9);
+  border-color: rgba(235, 255, 255, 1);
+}
+
+
+
+@media (max-width:767px) {
+  #fixedbg {
+    background-image: url(/img/background_790x680.jpg);
+  }
+
+  #wrapper {
+    padding-left: 0;
+    margin: 0 20px 0 0;
+  }
+
+  #sidebar-wrapper {
+    left: 0;
+  }
+
+  #wrapper.active {
+    position: relative;
+    left: 150px;
+  }
+
+  #wrapper.active #sidebar-wrapper {
+    left: 150px;
+    width: 150px;
+    transition: all 0.4s ease 0.1s;
+  }
+
+  #sidebar-toggle-wrapper {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  .sidebar-nav {
+    padding: 55px 10px 0 10px;
+  }
+
+  .mrt-section {
+    padding: 10px 10px 20px 10px;
+  }
 }
