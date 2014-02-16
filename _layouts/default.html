@@ -22,9 +22,9 @@
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav nav" role="navigation">
         {% if page.mainpage %}
-          <li class="active"><a id="about-link" class="title" href="#about">About</a></li>
-          <li><a class="title" href="#career">Career</a></li>
-          <li><a class="title" href="#connect">Connect</a></li>
+          <li class="active"><a id="about-link" class="title mainpage-link" href="#about">About</a></li>
+          <li><a class="title mainpage-link" href="#career">Career</a></li>
+          <li><a class="title mainpage-link" href="#connect">Connect</a></li>
           <li><a class="title" href="/blog/">Blog</a></li>
         {% else %}
           <li><a class="title" href="/index.html">About</a></li>
@@ -103,14 +103,14 @@
           return true;
         }
 
-        toggleSidebar();
-
         if (mainPage && $(this).hasClass("mainpage-link")) {
+          toggleSidebar();
           $($(this).attr('href'))[0].scrollIntoView();
           scrollBy(0, -offset);
+          return false;
         }
 
-        return false;
+        return true;
       });
 
       $("#sidebar-toggle").click(function(e) {
