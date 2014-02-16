@@ -204,20 +204,29 @@ a:visited {
   color: #62614b;
 }
 
+.connect-link-container {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 20px;
+}
+
+.connect-link {
+  padding: 15px;
+}
 
 .connect-link i {
-  color: rgba(235, 255, 255, 0.5);
-  border-color: rgba(235, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .connect-link a:hover i {
-  color: rgba(235, 255, 255, 0.9);
-  border-color: rgba(235, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 1);
 }
 
 .connect-link a:focus i {
-  color: rgba(235, 255, 255, 0.9);
-  border-color: rgba(235, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 1);
 }
 
 
@@ -258,5 +267,10 @@ a:visited {
 
   .mrt-section {
     padding: 10px 10px 20px 10px;
+  }
+
+  .connect-link-container {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
