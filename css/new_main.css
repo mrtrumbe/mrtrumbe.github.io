@@ -152,6 +152,10 @@ body {
   #sidebar-toggle-wrapper {
     display: block;
   }
+
+  .sidebar-nav {
+    padding: 55px 10px 0 10px;
+  }
 }
 
 .mrt-title {
