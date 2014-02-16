@@ -126,6 +126,10 @@ body {
 }
 
 @media (max-width:767px) {
+  #fixedbg {
+    background-image: url(/img/background_790x680.jpg);
+  }
+
   #wrapper {
     padding-left: 0;
   }
@@ -226,4 +230,20 @@ a {
 
 a:visited {
   color: #62614b;
+}
+
+
+.connect-link i {
+  color: rgba(235, 255, 255, 0.5);
+  border-color: rgba(235, 255, 255, 0.5);
+}
+
+.connect-link a:hover i {
+  color: rgba(235, 255, 255, 0.9);
+  border-color: rgba(235, 255, 255, 0.9);
+}
+
+.connect-link a:focus i {
+  color: rgba(235, 255, 255, 0.9);
+  border-color: rgba(235, 255, 255, 0.9);
 }
