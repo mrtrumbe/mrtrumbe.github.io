@@ -14,7 +14,7 @@
     <link href="/css/new_main.css" rel="stylesheet" />
     
   </head>
-  <body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="0">
+  <body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="-50">
     <div id="fixedbg"></div>
 
     <div id="wrapper">
@@ -22,7 +22,7 @@
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav nav" role="navigation">
         {% if page.mainpage %}
-          <li class="active"><a class="mainpage-link" href="/index.html">About</a></li>
+          <li class="active"><a id="about-link" class="mainpage-link" href="#about">About</a></li>
           <li><a class="mainpage-link" href="#career">Career</a></li>
           <li><a class="mainpage-link" href="#connect">Connect</a></li>
           <li><a href="/blog/">Blog</a></li>
@@ -73,6 +73,11 @@
       {% if page.mainpage %}
         mainPage = true;
       {% endif %}
+
+      $("#about-link").click(function(event) {
+          window.location = "/index.html";
+          return false;
+      });
 
       $('.sidebar-nav li a').click(function(event) {
         $("#wrapper").toggleClass("active");

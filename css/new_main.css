@@ -43,6 +43,11 @@ body {
   /* padding-top: 50px; */
 }
 
+p {
+  line-height: 1.5em;
+  padding-bottom: 0.4em;
+}
+
 #fixedbg {
   background-image: url(/img/background_1400x850.jpg);
   background-repeat: no-repeat;
