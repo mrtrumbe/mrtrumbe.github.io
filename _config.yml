@@ -2,3 +2,5 @@ name: Matthew Trumbell
 markdown: redcarpet
 pygments: true
 exclude: ["vendor"]
+paginate: 5
+paginate_path: "blog/page:num"

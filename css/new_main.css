@@ -220,17 +220,17 @@ a:visited {
 }
 
 .connect-link i {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   border-color: rgba(255, 255, 255, 0.8);
 }
 
 .connect-link a:hover i {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 1);
   border-color: rgba(255, 255, 255, 1);
 }
 
 .connect-link a:focus i {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 1);
   border-color: rgba(255, 255, 255, 1);
 }
 
