@@ -52,7 +52,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
+              <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
                 {{ content }}
               </div>
               <div class="col-md-5">
@@ -83,23 +83,39 @@
           return false;
       });
 
-      $('.sidebar-nav li a').click(function(event) {
-        $("#wrapper").toggleClass("active");
 
+      var wrapper = $("#wrapper");
+      var sidebarWrapper = $("#sidebar-wrapper");
+      function toggleSidebar() {
+        var sidebarActive = sidebarWrapper.hasClass("active");
+        sidebarWrapper.toggleClass("active");
+
+        if (!sidebarActive) {
+          wrapper.toggleClass("active");
+        }
+        else {
+          setTimeout(function () { wrapper.toggleClass("active"); }, 300);
+        }
+      }
+
+      $('.sidebar-nav li a').click(function(event) {
         if ($(this).attr("href") == "/index.html") {
           return true;
         }
 
+        toggleSidebar();
+
         if (mainPage && $(this).hasClass("mainpage-link")) {
-          event.preventDefault();
           $($(this).attr('href'))[0].scrollIntoView();
           scrollBy(0, -offset);
         }
+
+        return false;
       });
 
       $("#sidebar-toggle").click(function(e) {
-          e.preventDefault();
-          $("#wrapper").toggleClass("active");
+        toggleSidebar();
+        return false;
       });
       
     </script>

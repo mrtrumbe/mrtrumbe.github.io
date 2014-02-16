@@ -46,7 +46,6 @@ p {
 
 #wrapper {
   padding-left: 150px;
-  transition: all 0.4s ease 0.1s;
 
   margin: 0 40px 0 0;
 }
@@ -245,10 +244,9 @@ a:visited {
     left: 150px;
   }
 
-  #wrapper.active #sidebar-wrapper {
+  #sidebar-wrapper.active {
     left: 150px;
     width: 150px;
-    transition: all 0.4s ease 0.1s;
   }
 
   #sidebar-toggle-wrapper {
