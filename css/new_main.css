@@ -1,11 +1,5 @@
-/*
 @font-face {
-  font-family: MrtCustomFont;
-  src: url("/fonts/zag.eot");
-}
-*/
-@font-face {
-  font-family: MrtCustomFont;
+  font-family: MrtBodyFont;
   /*src: url("/fonts/junction/junction.ttf");*/
   /*src: url("/fonts/bebas/bebas_neue_regular.ttf");
   /*src: url("/fonts/zag/zag.otf");*/
@@ -14,8 +8,9 @@
   /*src: url("/fonts/crimson/CrimsonText-Roman.ttf");*/
   /*src: url("/fonts/museo_sans/MuseoSans-500.otf");*/
 }
+
 @font-face {
-  font-family: MrtCustomFont;
+  font-family: MrtTitleFont;
   src: url("/fonts/bebas/bebas_neue_regular.ttf");
   /*src: url("/fonts/zag/zag_bold.otf");*/
   /*src: url("/fonts/nexa/Nexa_Bold.otf");*/
@@ -27,20 +22,19 @@
 
 
 html {
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 body { 
-  /*font-family: "Trebuchet MS", Arial, sans-serif;*/
-  /* backups: Optima, Arial, */
-  font-family: MrtCustomFont, sans-serif;
+  font-family: MrtBodyFont, Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   color: #000;
 
-  background-color: #87A8CB;
-  overflow-x:hidden;
+  background-color: #87a8cb;
+  overflow-x: hidden;
+}
 
-
-  /* padding-top: 50px; */
+.title, h1, h2, h3, h4 {
+  font-family: MrtTitleFont, Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 p {
@@ -53,10 +47,10 @@ p {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: cover;
-  height:100%;
-  position:fixed;
-  width:100%;
-  z-index:-1;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
 }
 
 #wrapper {
@@ -183,11 +177,7 @@ p {
 }
 
 .mrt-section img {
-  float: left;
-  width: 120px;
-  height: 120px;
-  margin-right: 15px;
-  margin-bottom: 10px;
+  width: 100%;
 }
 
 .mrt-section h1 {
@@ -198,6 +188,14 @@ p {
 .mrt-section p {
   font-size: 18px;
   font-weight: normal;
+}
+
+.mrt-headshot {
+  float: left !important;
+  width: 120px !important;
+  height: 120px !important;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }
 
 a {
