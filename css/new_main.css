@@ -138,18 +138,14 @@ p {
 
   /* webkit */
   background-image: -webkit-gradient(
-    /*
-    linear, left top, left bottom, from(rgba(232, 218, 231, 0.5)),
-    to(rgba(232, 218, 231, 0.3))
-    */
-    linear, left top, left bottom, from(rgba(235, 255, 255, 0.5)),
+    linear, left top, left bottom, from(rgba(235, 255, 255, 0.55)),
     to(rgba(235, 255, 255, 0.5))
   );
 
   /* mozilla - FF3.6+ */
   background-image: -moz-linear-gradient(
     top left,
-    rgba(232, 218, 231, 0.5) 50%, rgba(232, 218, 231, 0.3) 30%
+    rgba(232, 218, 231, 0.55) 55%, rgba(232, 218, 231, 0.50) 50%
   );
 
   /* IE 5.5 - 7 */
