@@ -162,18 +162,25 @@ p {
   padding: 25px 25px 45px 25px;
 }
 
-.mrt-section img {
-  width: 100%;
-}
-
 .mrt-section h1 {
   font-weight: bold;
   font-size: 36pt;
 }
 
-.mrt-section p {
-  font-size: 18px;
+.mrt-section .meta {
+  padding-left: 20px;
+  font-style: italic;
+  font-size: 10pt;
   font-weight: normal;
+}
+
+.mrt-section p {
+  font-size: 12pt;
+  font-weight: normal;
+}
+
+.mrt-section img {
+    width: 100%;
 }
 
 .mrt-section ul li {
