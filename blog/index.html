@@ -13,7 +13,7 @@ mainpage: false
         <div class="post">
           {% if post.content contains "<!-- more -->" %}
             {{ post.content | split:"<!-- more -->" | first % }}
-            <p></p><a href="{{ post.url }}">Read more...</a></p>
+            <p><a href="{{ post.url }}">Read more...</a></p>
           {% else %}
             {{ post.content }}
           {% endif %}

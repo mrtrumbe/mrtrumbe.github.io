@@ -23,6 +23,7 @@ body {
 }
 
 .title, h1, h2, h3, h4, .pagination {
+  color: #443;
   font-family: MrtTitleFont, "Abadi MT Condensed Light", "Avenir Next Condensed", "Arial Narrow", Haettenschweiler, Consolas, sans-serif;
   font-weight: normal !important;
   text-transform: uppercase;
@@ -32,6 +33,25 @@ p {
   line-height: 1.5em;
   padding-bottom: 0.4em;
 }
+
+
+
+a {
+  color: rgba(68, 68, 51, 1);
+  text-decoration: underline;
+  padding: 2px;
+  margin: -2px;
+}
+
+a:visited {
+  color: rgba(68, 68, 51, 1);
+}
+
+a:hover {
+  color: rgba(68, 68, 51, 0.7);
+}
+
+
 
 #fixedbg {
   background-image: url(/img/background_1400x850.jpg);
@@ -66,6 +86,8 @@ p {
   width: 100%;
   margin: 0 0 0 10px;
 }
+
+
 
 #sidebar-toggle-wrapper {
   display: none;
@@ -107,12 +129,11 @@ p {
 }
 
 .sidebar-nav li a:hover {
+  color: rgba(235, 255, 255, 0.9);
   background-color: rgba(50, 75, 75, 0.5) !important;
+  border-color: rgba(114, 113, 91, 0);
 }
 
-.sidebar-nav li a:focus {
-  background-color: rgba(50, 75, 75, 0.5) !important;
-}
 
 
 .mrt-title {
@@ -130,11 +151,15 @@ p {
   color: rgba(235, 255, 255, 0.5);
 }
 
+
+
 .mrt-panel {
   background: rgba(235, 255, 255, 0.70);
   border: 0px;
   border-radius: 0px;
 }
+
+
 
 .mrt-section {
   padding: 25px 25px 45px 25px;
@@ -143,6 +168,11 @@ p {
 .mrt-section h1 {
   font-weight: bold;
   font-size: 36pt;
+}
+
+.mrt-section h1 a {
+  text-decoration: none;
+  color: #000;
 }
 
 .mrt-section .meta {
@@ -157,6 +187,7 @@ p {
   font-weight: normal;
 }
 
+
 .mrt-section img {
     width: 100%;
 }
@@ -166,6 +197,8 @@ p {
   font-weight: normal;
 }
 
+
+
 .mrt-headshot {
   float: left !important;
   width: 120px !important;
@@ -174,14 +207,7 @@ p {
   margin-bottom: 10px;
 }
 
-a {
-  color: #72715b;
-  text-decoration: underline;
-}
 
-a:visited {
-  color: #62614b;
-}
 
 .connect-link-container {
   margin-left: 15%;
@@ -194,21 +220,18 @@ a:visited {
 }
 
 .connect-link i {
-  color: #72717b;
-  border-color: #72717b;
+  color: rgba(68, 68, 51, .7);
+  border-color: rgba(68, 68, 51, .7);
   /*color: rgba(255, 255, 255, 0.8);
   border-color: rgba(255, 255, 255, 0.8);*/
 }
 
 .connect-link a:hover i {
-  color: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 255, 255, 1);
+  color: rgba(68, 68, 51, .5);
+  border-color: rgba(68, 68, 51, .5);
 }
 
-.connect-link a:focus i {
-  color: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 255, 255, 1);
-}
+
 
 .pagination {
   font-weight: bold;
@@ -219,6 +242,9 @@ a:visited {
 .pagination em {
   font-style: normal;
 }
+
+
+
 
 
 @media (max-width:767px) {
