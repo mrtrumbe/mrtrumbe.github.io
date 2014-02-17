@@ -155,8 +155,8 @@ a:hover {
 
 .mrt-panel {
   background: rgba(235, 255, 255, 0.70);
-  border: 0px;
-  border-radius: 0px;
+  border: 0;
+  border-radius: 0;
 }
 
 
@@ -172,7 +172,6 @@ a:hover {
 
 .mrt-section h1 a {
   text-decoration: none;
-  color: #000;
 }
 
 .mrt-section .meta {
