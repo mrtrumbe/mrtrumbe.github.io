@@ -131,31 +131,9 @@ p {
 }
 
 .mrt-panel {
-  background: rgba(235, 255, 255, 0);
+  background: rgba(235, 255, 255, 0.60);
   border: 0px;
   border-radius: 0px;
-
-  /* webkit */
-  background-image: -webkit-gradient(
-    linear, left top, left bottom, from(rgba(235, 255, 255, 0.65)),
-    to(rgba(235, 255, 255, 0.55))
-  );
-
-  /* mozilla - FF3.6+ */
-  background-image: -moz-linear-gradient(
-    top left,
-    rgba(232, 218, 231, 0.65) 65%, rgba(232, 218, 231, 0.55) 55%
-  );
-
-  /* IE 5.5 - 7 */
-  filter: progid:DXImageTransform.Microsoft.gradient(
-    gradientType=0, startColor=0, endColorStr=#E8DAE7
-  );
-
-  /* IE8 uses -ms-filter for whatever reason... */
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(
-    gradientType=0, startColor=0, endColoStr=#E8DAE7
-  );
 }
 
 .mrt-section {
@@ -216,8 +194,10 @@ a:visited {
 }
 
 .connect-link i {
-  color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 0.8);
+  color: #72717b;
+  border-color: #72717b;
+  /*color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.8);*/
 }
 
 .connect-link a:hover i {
