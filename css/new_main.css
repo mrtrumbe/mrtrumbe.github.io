@@ -22,7 +22,7 @@ body {
   overflow-x: hidden;
 }
 
-.title, h1, h2, h3, h4 {
+.title, h1, h2, h3, h4, .pagination {
   font-family: MrtTitleFont, "Abadi MT Condensed Light", "Avenir Next Condensed", "Arial Narrow", Haettenschweiler, Consolas, sans-serif;
   font-weight: normal !important;
   text-transform: uppercase;
@@ -131,7 +131,7 @@ p {
 }
 
 .mrt-panel {
-  background: rgba(235, 255, 255, 0.60);
+  background: rgba(235, 255, 255, 0.70);
   border: 0px;
   border-radius: 0px;
 }
@@ -210,6 +210,15 @@ a:visited {
   border-color: rgba(255, 255, 255, 1);
 }
 
+.pagination {
+  font-weight: bold;
+  font-size: 24pt;
+  width: 100%;
+}
+
+.pagination em {
+  font-style: normal;
+}
 
 
 @media (max-width:767px) {

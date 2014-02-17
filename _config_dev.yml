@@ -1,4 +1,4 @@
-production: true
+production: false
 
 name: Matthew Trumbell
 markdown: redcarpet
