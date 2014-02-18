@@ -7,8 +7,6 @@ tags: food
 [![The raw ingredients.](http://farm3.staticflickr.com/2811/8890921175_5dfec39cd0_b.jpg)](http://www.flickr.com/photos/97407207@N00/8890921175/)
 
 
-## Better than Broth
-
 We use a lot of broth in our house.  From soups to braises to sauces to reheating leftovers,
 broth (especially the chicken variety) is an essential part of how we do business in the
 kitchen. But it isn’t stock. What’s the difference? Gelatin. Stock has it, broth doesn’t
