@@ -203,6 +203,16 @@ a:hover {
   font-weight: normal;
 }
 
+.mrt-section .footer {
+  padding-bottom: 0px;
+  margin-bottom: -40px;
+  line-height: 0.6em;
+}
+
+small {
+  font-size: 7pt;
+}
+
 
 
 .mrt-headshot {
