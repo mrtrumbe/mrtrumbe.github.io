@@ -40,6 +40,7 @@ what Jekyll needs to process the file, so we'll work around that later. In that 
 add the following:
 
 {% highlight HTML %}
+{% raw %}
 ---
 ---
 
@@ -59,6 +60,7 @@ add the following:
   ]{% unless forloop.rindex == 2 %},{% endunless %}
 {% endunless %}{% endfor %}
 }
+{% endraw %}
 {% endhighlight %}
 
 Once you've added it, build the site with Jekyll and visit the /tags_json/ page in your
@@ -77,16 +79,17 @@ Now let's make a simple AJAX request for the data from your website. Assuming yo
 JQuery has been loaded:
 
 {% highlight JavaScript %}
-  $.ajax({
-    url: '/tags_json/',
-    dataType: "json",
-    success: function (data) {
-      console.log(data);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.log("failure!");
-    }
-  });
+$.ajax({
+  url: '/tags_json/',
+  dataType: "json",
+  success: function (data) {
+    console.log(data);
+  },
+  error: function (jqXHR, textStatus, errorThrown) {
+    console.log("failure!");
+  }
+});
+
 {% endhighlight %}
 
 Validate the request fired off and returned your tag data by using your browser's 
@@ -172,7 +175,7 @@ TagManager.prototype = {
 };
 {% endhighlight %}
 
-That code assumes you are using (Twitter Bootstrap)[http://getbootstrap.com/]. You'll
+That code assumes you are using [Twitter Bootstrap](http://getbootstrap.com/). You'll
 want to change the modal template and modal showing code if you are using another UI
 framework.
 
@@ -180,33 +183,35 @@ Once you get it integrated into your site, create an instance of the TagManager
 using the following:
 
 {% highlight JavaScript %}
-    var $tags = new TagManager();
+var $tags = new TagManager();
 {% endhighlight %}
 
 Applying the TagManager is similarly simple. I render my tags using Liquid template
 code like this:
 
 {% highlight HTML %}
-    {% if page.tags.size > 0 %}
-    <p class="tags">
-      Tags:
-      {% for tag in page.tags %}
-        <a href="/tags.html">{{ tag }}</a>&nbsp;
-      {% endfor %}
-    </p>
-    {% else %}
-      &nbsp;
-    {% endif %}
+{% raw %}
+{% if page.tags.size > 0 %}
+<p class="tags">
+  Tags:
+  {% for tag in page.tags %}
+    <a href="/tags.html">{{ tag }}</a>&nbsp;
+  {% endfor %}
+</p>
+{% else %}
+  &nbsp;
+{% endif %}
+{% endraw %}
 {% endhighlight %}
 
-Not that each tag links to the main "all tags" page just in case our JavaScript fails. 
+Note that each tag links to the main "all tags" page just in case our JavaScript fails. 
 Applying the TagManager is then as simple as this:
 
 {% highlight JavaScript %}
-    $(".tags a").click(function () {
-      $tags.showTagPosts($(this).html());
-      return false;
-    });
+$(".tags a").click(function () {
+  $tags.showTagPosts($(this).html());
+  return false;
+});
 {% endhighlight %}
 
 The "return false;" keeps the click from following the default link. A link to the 
@@ -235,14 +240,14 @@ And take a look at the code in the
 [GitHub Repository](https://github.com/aftco/aftco.github.io) for the site. The relevant 
 files are:
 
-* [/tags.html](https://github.com/aftco/aftco.github.io/blob/master/tags.html) The HTML
-    rendering of all tags on the site.
-* [/tags_json/index.html](https://github.com/aftco/aftco.github.io/blob/master/tags_json/index.html) 
-    The JSON rendering of the tag data (aka, the API).
-* [/js/tags.js](https://github.com/aftco/aftco.github.io/blob/master/js/tags.js) The
-    file containing our JavaScript code to hit the API and render the modal.
-* [/_layouts/default.html](https://github.com/aftco/aftco.github.io/blob/master/_layouts/default.html)
-    Our default Jekyll layout, which defines the site skeleton and uses the TagManager.
+* [/tags.html](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/tags.html) 
+    -- The HTML rendering of all tags on the site.
+* [/tags_json/index.html](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/tags_json/index.html) 
+    -- The JSON rendering of the tag data (aka, the API).
+* [/js/tags.js](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/js/tags.js) 
+    -- The file containing our JavaScript code to hit the API and render the modal.
+* [/_layouts/default.html](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/_layouts/default.html)
+    -- Our default Jekyll layout, which defines the site skeleton and uses the TagManager.
     
 If you have any questions about this, please [ask me](/#connect).
 
