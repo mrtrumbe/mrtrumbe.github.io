@@ -228,7 +228,7 @@ The "return false;" keeps the click from following the default link.
 I've implemented this tag method on this blog. Click on a tag on any of the posts to see it in action.
 
 And take a look at the code in the 
-[GitHub Repository]() for the site. The relevant
+[GitHub Repository](https://github.com/mrtrumbe/mrtrumbe.github.io) for the site. The relevant
 files are:
 
 * [/tags.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/tags.html)
