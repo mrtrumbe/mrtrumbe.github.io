@@ -51,7 +51,11 @@
                     </a>
                   </div>
                   <h1>
+                    {% if page.is_post %}
+                    Matt's Blog
+                    {% else %}
                     {{ page.title }}
+                    {% endif %}
                   </h1>
                 </div>
               </div>
