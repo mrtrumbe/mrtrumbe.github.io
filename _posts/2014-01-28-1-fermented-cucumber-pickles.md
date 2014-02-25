@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Fermented Cucumber Pickles"
-tags: food
+tags: Food Recipes Fermentation
 ---
+
 [![Tasty Pickles](http://farm9.staticflickr.com/8121/8830063216_d89e652d18_b.jpg)](http://www.flickr.com/photos/97407207@N00/8830063216/)
 
 I just never get tired of these. They are crunchy, tangy, spicy and a little salty.

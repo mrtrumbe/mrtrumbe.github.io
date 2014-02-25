@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pasta Carbonara"
-tags: food
+tags: Food Recipes Pasta
 ---
 
 Fatty. Finicky. Messy.  There are plenty of good reasons NOT to make pasta Carbonara,

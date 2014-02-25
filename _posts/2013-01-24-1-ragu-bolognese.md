@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ragu Bolognese"
-tags: food
+tags: Food Recipes Pasta
 ---
 
 The meatiest pasta sauce you will ever taste.

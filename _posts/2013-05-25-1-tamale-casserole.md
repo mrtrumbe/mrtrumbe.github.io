@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tamale Casserole"
-tags: food
+tags: Food Recipes Casseroles
 ---
 
 [![The pieces.](http://farm4.staticflickr.com/3817/8806513327_7955192dd2_b.jpg)](http://www.flickr.com/photos/97407207@N00/8806513327/)

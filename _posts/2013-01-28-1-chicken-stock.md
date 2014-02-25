@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Chicken Stock"
-tags: food
+tags: Food Recipes Basics Stock
 ---
 
 [![The raw ingredients.](http://farm3.staticflickr.com/2811/8890921175_5dfec39cd0_b.jpg)](http://www.flickr.com/photos/97407207@N00/8890921175/)

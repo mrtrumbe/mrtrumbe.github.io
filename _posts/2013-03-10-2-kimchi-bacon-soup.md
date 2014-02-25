@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kimchi Bacon Soup"
-tags: food
+tags: Food Recipes Soup
 ---
 
 ![The soup.](http://media.tumblr.com/0f8ad515592b1717e1091c5cd660bbe5/tumblr_inline_mjh7to9Uq61qz4rgp.jpg)
