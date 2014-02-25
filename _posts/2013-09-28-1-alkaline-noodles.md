@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Alkaline Noodles"
-tags: food
+tags: Food Recipes Noodles Pasta
 ---
 
 Wonderfully springy noodles, perfect for slurping.

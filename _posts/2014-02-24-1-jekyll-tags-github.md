@@ -1,42 +1,50 @@
 ---
 layout: post
-title: "Ajax Tag Solution for Jekyll on Github"
-tags: code javascript jekyll
+title: "Tags for Jekyll on Github"
+tags: Code JavaScript Jekyll
 ---
-I really like [Jekyll](http://jekyllrb.com/) for hosting your own blog and small 
-website. Combine it with the (free!) hosting solution that 
-[GitHub Pages](http://pages.github.com/) provides and you have a clean blogging 
-and site generation solution that will work for most situations where a dynamic server
-application is not needed.
 
-But hosting on GitHub has one big drawback: Jekyll plugins are disabled for security reasons.
+[Jekyll](http://jekyllrb.com/) is a great way to build a blog-capable website. It's straightforward
+but powerful and, best of all, generates a completely static site which can be hosted practically anywhere.
+[GitHub Pages](http://pages.github.com/) has become a popular hosting solution for Jekyll sites. It's
+free and leverages the power and availability of GitHub. Did I mention that it's free?
+
+There is, however, one downside to hosting a Jekyll site on GitHub: no plugins. GitHub disables Jekyll
+plugins for security reasons, which is understandable but unfortunate. Extending and customizing Jekyll
+is much easier when you can run arbitrary Ruby code during the site build.
 
 One practical side effect of this is that it is difficult to properly implement tags
-for your blog. This has been talked about all over the web, including on the
-[Jekyll issue tracker](https://github.com/jekyll/jekyll/issues/867). It has become 
-apparent that no solution is coming. So let's find a workaround!
+for a Jekyll blog. This has been talked about all over the web, including on the
+[Jekyll issue tracker](https://github.com/jekyll/jekyll/issues/867). It looks doubtful that
+an official solution is coming, so let's find a workaround!
 
 <!-- more -->
 
-## Existing Solutions
+## Approach
 
-Various people have come up with solutions for this. My favorite is from Michael Lanyon,
+Various people have come up with plugin-less tag implementations. My favorite is from Michael Lanyon,
 who figured out how to create an 
 [alphabetized page using pure Liquid templates](http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html). 
-It works like a charm, but it doesn't let you create per-tag pages with post listings 
-just for that particular tag.
+This works quite well, but it doesn't let you create per-tag post listings. This is a limitation of
+Jekyll and the Liquid template framework, which makes per-tag pages impossible. I wanted per-tag pages,
+and with a little javascript I was able extend this solution to do exactly that.
 
-Using a little javascript, we can extend this solution to do exactly that, with a couple
-of caveats. Let's hack!
+Well, *almost* exactly that. No per-tag page is actually generated. Instead, I use a pop-up modal to
+display a list of posts when the user clicks on a tag name. In some ways, this is more dynamic and nicer
+than a separate page for the per-tag posts. However, you can't link to a tag page using this solution.
+
+With that caveat in mind, to the code!
 
 
 ## A Static "API"
 
-After getting Michael's solution working as an HTML page, let's create another page
-that will generate the same information, rendered in JSON format. In my project, 
-I put the original HTML rendering in /tags.html and the new JSON format in 
-/tags_json/index.html. This file *shouldn't* have an .html extension, but that's
-what Jekyll needs to process the file, so we'll work around that later. In that file,
+First, get [Michael's solution](http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html)
+working as a separate page displaying all tags. We'll still let the user access this page if they choose.
+
+Next, let's create another page that will generate the same information, rendered in JSON format.
+In my project, I put the HTML rendering in /tags.html and the new JSON rendering in
+/tags_json/index.html. As this data is JSON, the file *shouldn't* have an .html extension, but that's
+the extension Jekyll needs to process the file, so we'll just have to work around that later. In this file,
 add the following:
 
 {% highlight HTML %}
@@ -66,9 +74,9 @@ add the following:
 Once you've added it, build the site with Jekyll and visit the /tags_json/ page in your
 browser. You should see a densly formatted JSON version of all the tags and their posts.
 I've opted for a dense format that is less readable than I'd like, but I wanted to minimize
-bandwidth for when the post/tag count gets high.
+bandwidth in case the post/tag count gets high down the line.
 
-If the page renders correctly, you now have a faux tag API that will let you get all tags
+If the page renders correctly, you now have a faux-tag API that will let you get all tags
 and their posts from javascript in a browser.
 
 
@@ -114,7 +122,10 @@ var TAG_MODAL = $('\
         <h4 class="modal-title">&nbsp;</h4>\
       </div>\
       <div class="modal-body">\
-        <p><a href="/tags.html">All Tags</a></p>\
+        <p><a href="/tags.html">All Tags</a>\
+        <br />\
+        <a class="all-tags-link" href="/tags.html">Tags</a>\
+        </p>\
         <ul class="modal-tag-list">\
         </ul>\
       </div>\
@@ -159,6 +170,9 @@ TagManager.prototype = {
   showTagPosts: function(tag) {
     var posts = this.getTagPosts(tag);
     $('.modal-title', TAG_MODAL).html('Posts with tag "' + tag + '"');
+    var atl = $('.all-tags-link', TAG_MODAL);
+    atl.attr('href', '/tags.html#' + tag);
+    atl.html(tag + " Tag");
     var lst = $('.modal-body ul', TAG_MODAL);
     lst.html("");
     for (var i=0; i<posts.length; i++) {
@@ -176,7 +190,7 @@ TagManager.prototype = {
 {% endhighlight %}
 
 That code assumes you are using [Twitter Bootstrap](http://getbootstrap.com/). You'll
-want to change the modal template and modal showing code if you are using another UI
+need to change the modal template and modal display code if you are using another UI
 framework.
 
 Once you get it integrated into your site, create an instance of the TagManager
@@ -186,26 +200,23 @@ using the following:
 var $tags = new TagManager();
 {% endhighlight %}
 
-Applying the TagManager is similarly simple. I render my tags using Liquid template
+Applying the TagManager is almost as simple. I render my tags using Liquid template
 code like this:
 
 {% highlight HTML %}
 {% raw %}
 {% if page.tags.size > 0 %}
-<p class="tags">
-  Tags:
+<span class="tags">
   {% for tag in page.tags %}
-    <a href="/tags.html">{{ tag }}</a>&nbsp;
+    <a href="/tags.html#{{tag}}">{{ tag }}</a>&nbsp;
   {% endfor %}
-</p>
-{% else %}
-  &nbsp;
+</span>
 {% endif %}
 {% endraw %}
 {% endhighlight %}
 
 Note that each tag links to the main "all tags" page just in case our JavaScript fails. 
-Applying the TagManager is then as simple as this:
+Applying the TagManager is just a matter of overriding the click event of the tag anchor:
 
 {% highlight JavaScript %}
 $(".tags a").click(function () {
@@ -214,40 +225,28 @@ $(".tags a").click(function () {
 });
 {% endhighlight %}
 
-The "return false;" keeps the click from following the default link. A link to the 
-"all tags" page is rendered by our JavaScript in the popup modal.
+The "return false;" keeps the click from following the default link.
 
 
-## Caveats
 
-There is no permalink to the posts for a given tag using this solution. Ideally, the
-site would have a page with a url like "/tags/mytag/" that would allow you to see
-all of the posts for a tag. To access that list, the user has to find the tag on
-a page on your site and click the link.
+## Working Example
 
-A potential workaround to this would be to use hashtags in the URL to access the list
-of tags. For example, visiting "/#/tags/mytag/" might take you to the page, then 
-immediately bring up a list of posts using JavaScript. If I implement such a solution
-I'll post instructions on it.
-
-
-## Real Life Example
-
-I've implemented this tag method on [2HandNews.com](http://2handnews.com), a Michigan
-sports blog I'm working on. See the method in action there.
+I've implemented this tag method on this blog. Click on a tag on any of the posts to see it in action.
 
 And take a look at the code in the 
-[GitHub Repository](https://github.com/aftco/aftco.github.io) for the site. The relevant 
+[GitHub Repository](https://github.com/mrtrumbe/mrtrumbe.github.io) for the site. The relevant
 files are:
 
-* [/tags.html](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/tags.html) 
+* [/tags.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/tags.html)
     -- The HTML rendering of all tags on the site.
-* [/tags_json/index.html](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/tags_json/index.html) 
+* [/tags_json/index.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/tags_json/index.html)
     -- The JSON rendering of the tag data (aka, the API).
-* [/js/tags.js](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/js/tags.js) 
+* [/js/tags.js](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/js/tags.js)
     -- The file containing our JavaScript code to hit the API and render the modal.
-* [/_layouts/default.html](https://github.com/aftco/aftco.github.io/blob/59645adab676a851107bb406ca092ea164ea54d6/_layouts/default.html)
-    -- Our default Jekyll layout, which defines the site skeleton and uses the TagManager.
-    
-If you have any questions about this, please [ask me](/#connect).
+* [/_layouts/default.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/_layouts/default.html)
+    -- The default Jekyll layout, which defines the site skeleton and uses the TagManager.
+* [/_layouts/post.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/_layouts/post.html)
+    -- The post Jekyll layout, which shows rendering of tags in a post.
+
+If you have any questions about this, please [get in touch with me](/#connect).
 

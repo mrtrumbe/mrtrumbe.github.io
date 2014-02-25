@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tomato Bisque"
-tags: food
+tags: Food Recipes Soup
 ---
 
 Rich, tomato-y and flavorful, this is heads above canned. I avoid cream, which dulls

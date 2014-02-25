@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Yeast Waffles"
-tags: food
+tags: Food Recipes
 ---
+
 [![Waffles](http://farm9.staticflickr.com/8498/8424547184_cb873e0842_b.jpg)](http://www.flickr.com/photos/97407207@N00/8424547184/)
 
 Yeast makes these waffles crispier, more tender and more flavorful than your average boxed or

@@ -1,8 +1,21 @@
 ---
 layout: default
+is_post: true
 ---
 <div class="mrt-section" >
-  <p class="meta">{{ page.date | date_to_string }}</p>
+  <h1>{{ page.title }}</h1>
+  <div class="meta">
+    <div class="date">
+      {{ page.date | date_to_string }}
+    </div>
+    {% if page.tags.size > 0 %}
+      <div class="tags">
+        {% for tag in page.tags %}
+          <a href="/tags.html#{{ tag }}">{{ tag }}</a>&nbsp;
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
   <div class="post">
   {{ content }}
   </div>
