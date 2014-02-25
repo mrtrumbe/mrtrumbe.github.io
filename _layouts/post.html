@@ -7,7 +7,7 @@ layout: default
     {% if page.tags.size > 0 %}
       <span class="meta tags">
         {% for tag in page.tags %}
-          <a href="/tags.html">{{ tag }}</a>&nbsp;
+          <a href="/tags.html#{{ tag }}">{{ tag }}</a>&nbsp;
         {% endfor %}
       </span>
     {% endif %}
