@@ -231,14 +231,16 @@ And take a look at the code in the
 [GitHub Repository]() for the site. The relevant
 files are:
 
-* [/tags.html]()
+* [/tags.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/tags.html)
     -- The HTML rendering of all tags on the site.
-* [/tags_json/index.html]()
+* [/tags_json/index.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/tags_json/index.html)
     -- The JSON rendering of the tag data (aka, the API).
-* [/js/tags.js]()
+* [/js/tags.js](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/js/tags.js)
     -- The file containing our JavaScript code to hit the API and render the modal.
-* [/_layouts/default.html]()
-    -- Our default Jekyll layout, which defines the site skeleton and uses the TagManager.
-    
-If you have any questions about this, please [ask me](/#connect).
+* [/_layouts/default.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/_layouts/default.html)
+    -- The default Jekyll layout, which defines the site skeleton and uses the TagManager.
+* [/_layouts/post.html](https://github.com/mrtrumbe/mrtrumbe.github.io/blob/master/_layouts/post.html)
+    -- The post Jekyll layout, which shows rendering of tags in a post.
+
+If you have any questions about this, please [get in touch with me](/#connect).
 
