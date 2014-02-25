@@ -4,7 +4,7 @@ title: "Tags for Jekyll on Github"
 tags: Code JavaScript Jekyll
 ---
 
-[Jekyll](http://jekyllrb.com/) is a great way to build your website with a blog. It's straightforward
+[Jekyll](http://jekyllrb.com/) is a great way to build a blog-capable website. It's straightforward
 but powerful and, best of all, generates a completely static site which can be hosted practically anywhere.
 [GitHub Pages](http://pages.github.com/) has become a popular hosting solution for Jekyll sites. It's
 free and leverages the power and availability of GitHub. Did I mention that it's free?
