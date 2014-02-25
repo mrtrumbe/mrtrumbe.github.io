@@ -122,7 +122,10 @@ var TAG_MODAL = $('\
         <h4 class="modal-title">&nbsp;</h4>\
       </div>\
       <div class="modal-body">\
-        <p><a href="/tags.html">All Tags</a></p>\
+        <p><a href="/tags.html">All Tags</a>\
+        <br />\
+        <a class="all-tags-link" href="/tags.html">Tags</a>\
+        </p>\
         <ul class="modal-tag-list">\
         </ul>\
       </div>\
@@ -167,6 +170,9 @@ TagManager.prototype = {
   showTagPosts: function(tag) {
     var posts = this.getTagPosts(tag);
     $('.modal-title', TAG_MODAL).html('Posts with tag "' + tag + '"');
+    var atl = $('.all-tags-link', TAG_MODAL);
+    atl.attr('href', '/tags.html#' + tag);
+    atl.html(tag + " Tag");
     var lst = $('.modal-body ul', TAG_MODAL);
     lst.html("");
     for (var i=0; i<posts.length; i++) {
