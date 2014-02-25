@@ -4,16 +4,18 @@ is_post: true
 ---
 <div class="mrt-section" >
   <h1>{{ page.title }}</h1>
-  <p class="meta">
-    {{ page.date | date_to_string }}
+  <div class="meta">
+    <div class="date">
+      {{ page.date | date_to_string }}
+    </div>
     {% if page.tags.size > 0 %}
-      <span class="meta tags">
+      <div class="tags">
         {% for tag in page.tags %}
           <a href="/tags.html#{{ tag }}">{{ tag }}</a>&nbsp;
         {% endfor %}
-      </span>
+      </div>
     {% endif %}
-  </p>
+  </div>
   <div class="post">
   {{ content }}
   </div>

@@ -261,6 +261,7 @@ small {
 
 
 .tags {
+  display: inline-block !important;
   float: right;
 }
 
@@ -284,6 +285,14 @@ small {
   font-size: 0.9rem;
 }
 
+
+.meta {
+  margin-bottom: 10px;
+}
+
+.meta .date {
+  display: inline-block;
+}
 
 
 @media (max-width:767px) {
@@ -330,5 +339,14 @@ small {
   
   .connect-link {
     padding: 5px;
+  }
+
+  .meta .date {
+    display: block;
+  }
+
+  .tags {
+    display: block;
+    float: none;
   }
 }
