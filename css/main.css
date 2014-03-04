@@ -297,6 +297,14 @@ small {
   display: inline-block;
 }
 
+.utility-links {
+  text-align: center;
+}
+
+.utility-links a {
+  font-size: 12px;
+}
+
 
 @media (max-width:767px) {
   #fixedbg {
