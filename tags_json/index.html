@@ -12,7 +12,7 @@
   {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
   "{{ this_word }}": [
     {% for post in site.tags[this_word] %}{% if post.title != null %}
-    ["{{ post.url }}","{{ post.title }}","{{ post.date | date_to_xmlschema }}"]{% unless forloop.last %},{% endunless %}
+    ["{{ post.url }}","{{ post.title | escape }}","{{ post.date | date_to_xmlschema }}"]{% unless forloop.last %},{% endunless %}
     {% endif %}{% endfor %}
   ]{% unless forloop.rindex == 2 %},{% endunless %}
 {% endunless %}{% endfor %}
